@@ -1,11 +1,23 @@
+:root {
+  --container-width: 768px;
+  --container-height: 768px;
+}
+
 * {
   box-sizing: border-box;
 }
 
+header {
+  width: var(--container-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 #container {
   padding: 0;
-  height: 768px;
-  width: 768px;
+  height: var(--container-height);
+  width: var(--container-width);
   border: 1px solid black;
   display: flex;
   flex-direction: row;
@@ -22,4 +34,12 @@
 
 .colored-box {
   background-color: black;
+}
+
+button {
+  padding: 0.5em 1em;
+}
+
+button:hover {
+  cursor: pointer;
 }
