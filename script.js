@@ -1,4 +1,4 @@
-const boxLength = 16;
+let boxLength = 16;
 
 const box = document.createElement("div");
 const container = document.querySelector("#container");
@@ -24,10 +24,12 @@ function configureBoxStyle(box, container, length) {
   box.classList.add("box");
 }
 
-function fillContainerWithBoxes(box, container, length) {
+function emptyAndFillContainerWithBoxes(box, container, length) {
   if (!(box instanceof HTMLElement) || !(container instanceof HTMLElement)) {
     throw TypeError("Argument is not instance of HTMLElement.");
   }
+  container.replaceChildren();
+
   configureBoxStyle(box, container, length);
 
   const gridArea = length * length;
@@ -42,5 +44,15 @@ function fillContainerWithBoxes(box, container, length) {
   }
 }
 
-fillContainerWithBoxes(box, container, boxLength);
+emptyAndFillContainerWithBoxes(box, container, boxLength);
 
+const changeDensityButton = document.querySelector("button#density-changer");
+changeDensityButton.addEventListener("click", () => {
+  let gridLength = boxLength;
+  do {
+    gridLength = prompt("Change the number of grids per side between 1 and 100: ", gridLength);
+    if (gridLength === null) return;
+  } while (Number(gridLength) < 1 || Number(gridLength) > 100);
+  emptyAndFillContainerWithBoxes(box, container, Number(gridLength));
+  boxLength = gridLength;
+});
