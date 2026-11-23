@@ -34,6 +34,9 @@ function fillContainerWithBoxes(box, container, length) {
 
   for (let i = 0; i < gridArea; i++) {
     const dupBox = box.cloneNode();
+    dupBox.addEventListener("mouseenter", () => {
+      dupBox.classList.add("colored-box");
+    });
 
     container.appendChild(dupBox);
   }

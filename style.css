@@ -19,3 +19,7 @@
 .box {
   border: 1px solid gray;
 }
+
+.colored-box {
+  background-color: black;
+}
