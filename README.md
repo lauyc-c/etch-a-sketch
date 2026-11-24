@@ -6,7 +6,7 @@ This repository contains a solution to the etch-and-sketch project in [The Odin 
 
 ## Project overview
 
-The webpage shows a 16x16 grid made of square boxes, which can be resized using the button in the header, up to 100 boxes on each side of the grid. Upon hovering the cursor over each square, the sqaure color turns black, which gives the effect of drawing on the grid.
+The webpage shows a 16x16 grid made of square boxes, which can be resized using the button in the header, up to 100 boxes on each side of the grid. Upon hovering the cursor over each square, the sqaure turns into a random color and increases in opacity, which gives the effect of drawing on the grid.
 
 ## Key technologies used
 
