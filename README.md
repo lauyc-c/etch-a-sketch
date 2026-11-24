@@ -1,6 +1,8 @@
 # Etch-a-Sketch
 
-This project allows users to draw patterns by coloring a grid of boxes by hovering the mouse cursor above the boxes, which is done by using JavaScript Web API to control web elements.
+This repository contains a solution to the etch-and-sketch project in [The Odin Project](https://www.theodinproject.com/). It allows users to draw patterns by coloring a grid of boxes by hovering the mouse cursor above the boxes, which is done by using JavaScript Web API to control web elements.
+
+[Visit the live site of this project](https://lauyc-c.github.io/etch-a-sketch/)
 
 ## Project overview
 
