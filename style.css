@@ -32,10 +32,6 @@ header {
   border: 1px solid gray;
 }
 
-.colored-box {
-  background-color: black;
-}
-
 button {
   padding: 0.5em 1em;
 }

@@ -1,5 +1,6 @@
 let boxLength = 16;
 
+const root = document.querySelector(":root");
 const box = document.createElement("div");
 const container = document.querySelector("#container");
 
@@ -37,11 +38,19 @@ function emptyAndFillContainerWithBoxes(box, container, length) {
   for (let i = 0; i < gridArea; i++) {
     const dupBox = box.cloneNode();
     dupBox.addEventListener("mouseenter", () => {
-      dupBox.classList.add("colored-box");
+      dupBox.style.backgroundColor = getRandomRGB();
     });
 
     container.appendChild(dupBox);
   }
+}
+
+function getRandomRGB() {
+  return `rgb(${randomizeColorIndex()} ${randomizeColorIndex()} ${randomizeColorIndex()})`;
+}
+
+function randomizeColorIndex() {
+  return Math.floor(256 * Math.random());
 }
 
 emptyAndFillContainerWithBoxes(box, container, boxLength);
