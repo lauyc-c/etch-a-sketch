@@ -17,6 +17,7 @@ function configureBoxStyle(box, container, length) {
 
   box.style.height = `calc(${containerHeight} / ${length})`;
   box.style.width = `calc(${containerWidth} / ${length})`;
+  box.style.opacity = 0;
   
   const getPercentageOfContainer = (boxSize) => `${100 / boxSize}%`;
 
@@ -37,7 +38,10 @@ function emptyAndFillContainerWithBoxes(box, container, length) {
 
   for (let i = 0; i < gridArea; i++) {
     const dupBox = box.cloneNode();
-    dupBox.addEventListener("mouseenter", () => {
+    dupBox.addEventListener("mouseenter", (e) => {
+      if (Number(dupBox.style.opacity) < 1) {
+        dupBox.style.opacity = Number(e.target.style.opacity) + 0.1;
+      }
       dupBox.style.backgroundColor = getRandomRGB();
     });
 
